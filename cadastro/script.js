@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const email = document.getElementById('email').value;
       const senha = document.getElementById('senha').value;
 
-      // Validate mandatory fields
+     
       if (!nome || !nomeUsuario || !email || !senha) {
         showModal('Todos os campos são obrigatórios.');
         return;
@@ -16,17 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
       try {
         const isNomeUsuarioExists = await checkIfNomeUsuarioExists(nomeUsuario, email);
         if (isNomeUsuarioExists) {
-          // Show modal with error message
+         
           showModal('Este nome de usuário já está em uso. Escolha outro.');
         } else {
           await postData(nome, nomeUsuario, email, senha);
-          // Show modal with success message
+          
           showModal('Usuário registrado com sucesso!');
           window.location.href = "../telaleqr/index.html";
         }
       } catch (error) {
         console.error('Erro durante o processo:', error);
-        // Show modal with error message
+        
         showModal('Erro durante o processo. Consulte o console para mais informações.');
       }
     });
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
       window.history.back();
     });
 
-    // Modal close button event listener
+    
     const modalCloseButton = document.querySelector('.close');
     modalCloseButton.addEventListener('click', function () {
       hideModal();
@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   async function checkIfNomeUsuarioExists(nomeUsuario) {
-    // ... (unchanged)
+    
   }
 
   async function postData(nome, nomeUsuario, email, senha) {
-    // ... (unchanged)
+    
   }

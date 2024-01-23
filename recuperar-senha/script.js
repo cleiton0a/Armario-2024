@@ -1,10 +1,10 @@
 function createResetButton() {
   const buttonContainer = document.getElementById('buttonContainer');
 
-  // ... (existing code)
+
 
   resetButton.addEventListener('click', function () {
-    // ... (existing code)
+   
 
     fetch(resetUrl, {
       method: 'POST',
