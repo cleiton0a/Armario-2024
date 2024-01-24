@@ -1,12 +1,20 @@
 const token = localStorage.getItem("token");
-const getarmariosString = localStorage.getItem('getarmarios');
+const getarmariosString = localStorage.getItem('dadosArmarios');
 
 document.addEventListener("DOMContentLoaded", function () {
+    debugger;
     createArmarioDetails(JSON.parse(getarmariosString));
 });
 
 function createArmarioDetails(getarmarios) {
     const armarioDetailsContainer = document.getElementById('armarioDetails');
+
+    function handleInvalidDataError(data) {
+    
+        console.error('Dados inválidos:', data);
+    
+        alert('Erro: Dados inválidos');
+    }
 
     if (!getarmarios) {
         handleInvalidDataError(getarmarios);
