@@ -1,10 +1,11 @@
-/* Global Styles */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: 10;
     text-align: center;
+
   }
   
   .modal {
@@ -34,6 +35,12 @@ body {
     font-weight: bold;
   }
   
+  textarea{
+      margin: 10px;
+      width: 300px;
+      height: 280px;
+
+  }
   .close:hover,
   .close:focus {
     color: black;
@@ -67,9 +74,7 @@ body {
     font-size: 15px; /* Adjusted for mobile */
   }
   
-  #buttonContainer {
-    text-align: center;
-  }
+
   
   button {
     --glow-color: rgb(4, 43, 95);
@@ -84,10 +89,8 @@ body {
     border-radius: 1em;
     outline: none;
     text-shadow: 0 0 0.5em var(--glow-color);
-    position: relative;
     transition: all 0.3s;
-    display: inline-block; /* Added for side-by-side alignment */
-    margin-right: 5px; /* Added for spacing between buttons */
+ 
   }
   
   @media only screen and (max-width: 600px) {
@@ -97,16 +100,14 @@ body {
   
     input {
       font-size: 14px;
-      padding: 6px; /* Adjusted for mobile */
-      margin-bottom: 8px; /* Adjusted for mobile */
+      padding: 6px; 
+      margin-bottom: 8px; 
     }
   
     button {
       font-size: 14px;
-      padding: 0.8em; /* Adjusted for mobile */
-      margin-right: 0; /* Remove margin for mobile */
-      margin-bottom: 5px; /* Adjusted for mobile */
-      display: block; /* Set to block for full width on mobile */
+      padding: 0.8em;
+      margin: 0 4px;
     }
   }
   

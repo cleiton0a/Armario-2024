@@ -27,7 +27,7 @@ function createArmarioDetails(getarmarios) {
 
 function createArmarioElements(armario, container) {
     const idParagraph = createParagraph('Armario numero:', armario.id);
-    const descricaoInput = createTextInput('Descrição:', armario.descricao);
+    const descricaoInput = createTextInput('Descrição', armario.descricao);
     const atualizarDescricaoBtn = createButton('Atualizar Descrição', () => {
         const newDescription = descricaoInput.querySelector('textarea').value;
         updateDescription(armario.id, newDescription);
