@@ -2,7 +2,6 @@ const token = localStorage.getItem("token");
 const getarmariosString = localStorage.getItem('dadosArmarios');
 
 document.addEventListener("DOMContentLoaded", function () {
-    debugger;
     createArmarioDetails(JSON.parse(getarmariosString));
 });
 
