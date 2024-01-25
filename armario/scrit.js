@@ -2,7 +2,6 @@ const token = localStorage.getItem("token");
 const getarmariosString = localStorage.getItem('dadosArmarios');
 
 document.addEventListener("DOMContentLoaded", function () {
-    debugger;
     createArmarioDetails(JSON.parse(getarmariosString));
 });
 
@@ -10,10 +9,8 @@ function createArmarioDetails(getarmarios) {
     const armarioDetailsContainer = document.getElementById('armarioDetails');
 
     function handleInvalidDataError(data) {
-    
         console.error('Dados inválidos:', data);
-    
-        alert('Erro: Dados inválidos');
+        displayModal('Erro: Dados inválidos');
     }
 
     if (!getarmarios) {
@@ -80,7 +77,10 @@ function appendChildren(parent, children) {
 function confirmAndRemoveArmario(armarioId) {
     const confirmRemoval = confirm('Tem certeza de que deseja voltar este armario?');
     if (confirmRemoval) {
-        window.location.href = "../telalerqr/index.html";
+        displayModal('Remoção confirmada. Redirecionando...');
+        setTimeout(function () {
+            window.location.href = "../telalerqr/index.html";
+        }, 2000);
     }
 }
 
@@ -91,12 +91,12 @@ function updateDescription(armarioId, description) {
         return;
     }
 
-    const apiUrl = `http://www.armariosapi.somee.com/api/Armarios/${armarioId}`;
+    const apiUrl = `https://www.armariosapi.somee.com/api/Armarios/${armarioId}`;
 
     fetch(apiUrl, {
         method: 'PUT',
         headers: {
-            'Accept': '*/*',
+            'Accept': 'application/json',
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
         },
@@ -109,6 +109,12 @@ function updateDescription(armarioId, description) {
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        // Check for empty response
+        if (response.status === 204) {
+            // No content, handle accordingly
+            return null;
         }
 
         return response.json();
@@ -125,19 +131,19 @@ function updateDescription(armarioId, description) {
 }
 
 function displayModal(message) {
-    var modal = document.getElementById('myModal');
-    var modalMessage = document.getElementById('modal-message');
+    const modal = document.getElementById('myModal');
+    const modalMessage = document.getElementById('modal-message');
     modalMessage.textContent = message;
 
-    var span = document.getElementsByClassName("close")[0];
+    const span = document.getElementsByClassName("close")[0];
 
     modal.style.display = "block";
 
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
