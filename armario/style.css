@@ -36,8 +36,8 @@ body {
   }
   
   textarea{
-      margin: 10px;
-      width: 300px;
+      margin: 10px auto;
+      width: 95%;
       height: 280px;
 
   }
@@ -71,7 +71,7 @@ body {
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
-    font-size: 15px; /* Adjusted for mobile */
+    font-size: 15px;
   }
   
 
