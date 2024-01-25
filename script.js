@@ -25,7 +25,7 @@ async function authenticate() {
 
       if (!response.ok) {
         const errorMessage = await response.json();
-        showModal(`Error: ${response.status} - ${errorMessage}`);
+        showModal(`Usuário ou senha inválidos `);
         return;
       }
 

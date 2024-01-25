@@ -111,9 +111,9 @@ function updateDescription(armarioId, description) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        // Check for empty response
+        
         if (response.status === 204) {
-            // No content, handle accordingly
+           
             return null;
         }
 

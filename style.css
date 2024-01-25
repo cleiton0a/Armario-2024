@@ -77,9 +77,7 @@ img {
     background-color: var(--glow-color);
     
    }
-   /* Add your other styles */
-
-/* The Modal (background) */
+ 
 .modal {
     display: none;
     position: fixed;
@@ -90,7 +88,7 @@ img {
     background-color: rgba(0,0,0,0.5);
   }
   
-  /* Modal Content */
+ 
   .modal-content {
     position: absolute;
     top: 50%;
@@ -101,7 +99,7 @@ img {
     text-align: center;
   }
   
-  /* Close button */
+ 
   .close {
     color: #aaa;
     float: right;
