@@ -45,7 +45,7 @@ input {
 
 button {
   --glow-color: rgb(4, 43, 95);
-  --enhanced-glow-color: rgb(15, 15, 15);
+  --enhanced-glow-color: rgb(255, 255, 255);
   --btn-color: rgb(252, 252, 252);
   border: 0.2em solid var(--glow-color);
   padding: 1em;
@@ -65,7 +65,6 @@ button:hover {
   color: var(--enhanced-glow-color);
   border-color: var(--enhanced-glow-color);
   background-color: var(--glow-color);
-  text-shadow: 0 0 0.5em var(--enhanced-glow-color);
 }
 
 img {
