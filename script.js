@@ -25,7 +25,7 @@ async function authenticate() {
 
       if (!response.ok) {
         const errorMessage = await response.json();
-        showModal(`Usuário e senha incoreta`);
+        showModal(`Usuário ou senha incorreta`);
         return;
       }
 
@@ -34,8 +34,10 @@ async function authenticate() {
           
       if (responsejson.token) {
         localStorage.setItem('token', responsejson.token);
-          localStorage.setItem('id', responsejson.id);
-        
+        localStorage.setItem('id', responsejson.id);
+        localStorage.setItem('nomeUsuario', responsejson.nomeUsuario);
+        localStorage.setItem('email', responsejson.email);
+        localStorage.setItem('nome', responsejson.nome);
         window.location.href = "/telalerqr";
       }
 

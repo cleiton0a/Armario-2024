@@ -1,7 +1,7 @@
 const token = localStorage.getItem("token");
 const id = localStorage.getItem("id");
 console.log(id)
-if(id!=15){
+if(id==15){
   const btn =document.getElementById("cadastro")
   btn.setAttribute("style","display:none;")
 }
