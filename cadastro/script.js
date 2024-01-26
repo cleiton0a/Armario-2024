@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', function () {
       try {
           const isNomeUsuarioExists = await checkIfNomeUsuarioExists(nomeUsuario,email);
           if (isNomeUsuarioExists) {
-              alert('Este nome de usuário já está em uso. Escolha outro.');
+              confirm('Este nome de usuário já está em uso. Escolha outro.');
           } else {
               await postData(nome, nomeUsuario, email, senha);
-              alert('Usuário registrado com sucesso!');
+              confirm('Usuário registrado com sucesso!');
               
               window.location.href = "../telaleqr/index.html";
           }
       } catch (error) {
           console.error('Erro durante o processo:', error);
-          alert('Erro durante o processo. Consulte o console para mais informações.');
+          confirm('Erro durante o processo. ');
       }
   });
 
