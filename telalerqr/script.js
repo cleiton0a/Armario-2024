@@ -1,5 +1,10 @@
 const token = localStorage.getItem("token");
-
+const id = localStorage.getItem("id");
+console.log(id)
+if(id!=15){
+  const btn =document.getElementById("cadastro")
+  btn.setAttribute("style","display:none;")
+}
 function docReady(fn) {
     if (document.readyState === "complete" || document.readyState === "interactive") {
         setTimeout(fn, 1);

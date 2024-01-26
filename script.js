@@ -25,17 +25,20 @@ async function authenticate() {
 
       if (!response.ok) {
         const errorMessage = await response.json();
-        showModal(`Error: ${response.status} - ${errorMessage}`);
+        showModal(`Usuário e senha incoreta`);
         return;
       }
 
       const responsejson = await response.json();
       console.log(responsejson);
-
+          
       if (responsejson.token) {
         localStorage.setItem('token', responsejson.token);
+          localStorage.setItem('id', responsejson.id);
+        
         window.location.href = "/telalerqr";
       }
+
     } catch (error) {
       console.error('Error during authentication:', error);
     }
