@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 async function checkIfNomeUsuarioExists(nomeUsuario) {
-  const apiUrl = 'http://www.armariosapi.somee.com/api/Usuarios';
+  const apiUrl = 'https://www.armariosapi.somee.com/api/Usuarios';
 
   try {
       const response = await fetch(apiUrl);
